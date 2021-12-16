@@ -1,0 +1,29 @@
+@using ChefsNDishes.Models
+@model ViewModel
+
+
+<h1><a href="http://localhost:5000">Chefs</a> | Dishes</h1>
+<h4><a href="http://localhost:5000/dishes/new">Add a Dish</a></h4>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Chef</th>
+            <th>Tastiness</th>
+            <th>Calories</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Dish dish in Model.AllDishes)
+        {
+            <tr>
+                <td>@dish.DishName</td>
+                <td>@dish.Creator.FirstName @dish.Creator.LastName</td>
+                <td>@dish.Tastiness</td>
+                <td>@dish.Calories</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+@model ChefsNDishes.Models.Chef
+
+<div>
+    <h1>Add a Chef!</h1>
+</div>
+
+<div>
+    <a href="http://localhost:5000/">Home</a>
+</div>
+
+<div>
+    <form asp-action="chefsubmit">
+        <div>
+            <span asp-validation-for = "FirstName"></span>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName">
+        </div>
+        <div>
+            <span asp-validation-for = "LastName"></span>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName">
+        </div>
+        <div>
+            <span asp-validation-for = "Birthday"></span>
+            <label asp-for="Birthday"></label>
+            <input asp-for="Birthday">
+        </div>
+        <div>
+            <input type="submit" value="Add Chef">
+        </div>
+    </form>
+</div>

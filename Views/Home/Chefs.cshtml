@@ -1,0 +1,26 @@
+@using ChefsNDishes.Models
+@model ViewModel
+
+
+<h1>Chefs | <a href="http://localhost:5000/dishes">Dishes</a></h1>
+<h4><a href="http://localhost:5000/new">Add a Chef</a></h4>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th># of Dishes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Chef chef in Model.AllChefs)
+        {
+            <tr>
+                <td>@chef.FirstName @chef.LastName</td>
+                <td>@chef.Birthday</td>
+                <td>@chef.CreatedDishes.Count()</td>
+            </tr>
+        }
+    </tbody>
+</table>
